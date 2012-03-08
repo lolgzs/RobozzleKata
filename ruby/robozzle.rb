@@ -33,7 +33,7 @@ class Ship
     self
   end
 
-p
+
   def forward
     at(Point.new(0,1))
   end

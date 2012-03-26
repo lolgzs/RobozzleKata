@@ -1,0 +1,16 @@
+# RobozzleKata
+
+The base implementation of the Robozzle game in Clojure.
+It will serv to be improved and extended through coding sessions.
+
+## Usage
+
+FIXME: write
+
+## License
+
+Copyright (C) 2012 CARA 74
+
+http://www.cara74.org/pier/events/cr2012
+
+Distributed under the Eclipse Public License, the same as Clojure.

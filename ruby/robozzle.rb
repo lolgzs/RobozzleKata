@@ -7,6 +7,11 @@ class Point
   end
 
 
+  def +(p)
+    Point.new(@x + p.x, @y + p.y)
+  end
+
+
   def ==(p) 
     (@x == p.x) and (@y == p.y)
   end
@@ -25,6 +30,7 @@ class Ship
 
   def initialize
     @positions = []
+    self.north
   end
 
   
@@ -34,8 +40,49 @@ class Ship
   end
 
 
+  def position
+    @positions.last
+  end
+
+
   def forward
-    at(Point.new(0,1))
+    at(self.position + @translation)
+  end
+
+
+  def north
+    @translation = Point.new(0,1)
+    self
+  end
+
+
+  def south
+    @translation = Point.new(0,-1)
+    self
+  end
+
+
+  def east
+    @translation = Point.new(1,0)
+    self
+  end
+
+
+  def west
+    @translation = Point.new(-1,0)
+    self
+  end
+
+
+  def left
+    @translation = Point.new(-@translation.y, @translation.x)
+    at(self.position)
+  end
+
+
+  def right
+    @translation = Point.new(@translation.y, -@translation.x)
+    at(self.position)
   end
 end
 
